@@ -181,9 +181,21 @@
   font-size: 14px;
   opacity: 50%;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px var(--background-color);
+  text-shadow: -1px 0 var(--background-color), 
+                0 1px var(--background-color), 
+                1px 0 var(--background-color), 
+                0 -1px var(--background-color);
   z-index: 1;
 }
+
+@supports((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+  .card__content-label {
+      text-shadow: none;
+      -webkit-text-stroke: 1px var(--stroke-color);
+      text-stroke: 1px var(--stroke-color);
+  }
+} 
+
 
 .post-content {
   display: flex;
