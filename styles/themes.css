@@ -36,5 +36,6 @@
         --gradient-color: var(--background-color);
         --gradient-light-color: #007f0c;
         --gradient-dark-color: #004306;
+        --button-text-color: var(--main-color);
     }
 }
