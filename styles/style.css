@@ -50,6 +50,7 @@
 .logo-title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-block-end: 20px;
+  text-transform: uppercase;
 }
 
 .logo-subtitle {
@@ -72,6 +73,7 @@
   padding: 0;
   position: relative;
   text-transform: uppercase;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
@@ -103,6 +105,7 @@
 .theme-menu__button:hover {
   opacity: var(--active-button-opacity);
   cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus {
@@ -265,7 +268,7 @@
 
 .card__icon-button {
   cursor: pointer;
-  max-height: 36px;
+  max-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,7 +280,6 @@
 
 .card__like-button {
   max-height: 38px;
-  position: relative;
   width: 130px;
   padding: 9px 17px;
 }
@@ -305,20 +307,23 @@
   mix-blend-mode: difference;
 }
 
-.dialog[open] {
+.dialog {
   position: fixed;
   inset: 0;
-  display: grid;
-  grid-template-columns: max-content 1fr;
   max-inline-size: 353px;
   padding: 30px;
   color: var(--main-color);
   border: 2px solid var(--main-color);
   background-color: var(--background-color);
+  z-index: 3;
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-columns: max-content 1fr;
   column-gap: 20px;
   row-gap: 30px;
   align-items: center;
-  z-index: 3;
 }
 
 .dialog::backdrop {
@@ -370,7 +375,7 @@
     width: 306px;
   }
 
-  .dialog[open] {
+  .dialog {
     padding: 30px 40px;
   }
   
