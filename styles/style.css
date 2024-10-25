@@ -226,7 +226,7 @@
   margin-block-start: 2px;
   align-self: end;
   display: flex;
-  gap: 6px;
+  gap: 4px;
   align-items: center;
 }
 
@@ -236,6 +236,8 @@
   cursor: pointer;
   color: var(--button-text-color);
   background-color: var(--background-color);
+  box-shadow: 2px 2px 0px transparent;
+  transition: box-shadow 0.3s ease;
 }
 
 .content-button::before {
@@ -272,6 +274,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -316,14 +320,14 @@
   border: 2px solid var(--main-color);
   background-color: var(--background-color);
   z-index: 3;
-}
-
-.dialog[open] {
-  display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 20px;
   row-gap: 30px;
   align-items: center;
+}
+
+.dialog[open] {
+  display: grid;
 }
 
 .dialog::backdrop {
